@@ -1,8 +1,9 @@
-import Header from '@/components/common/header';
+// import Header from '@/components/common/header';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-// const Header = dynamic(() => import('@/components/common/header'), { ssr: false });
+const Header = dynamic(() => import('@/components/common/header'), { ssr: false });
 
 export interface AboutPageProps {}
 
@@ -57,9 +58,3 @@ export async function getStaticProps() {
     props: {},
   };
 }
-
-// export async function getServerSideProps() {
-//   return {
-//     props: {},
-//   };
-// }
