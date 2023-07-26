@@ -2,7 +2,7 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
+type Data = { 
   name: string;
 };
 
