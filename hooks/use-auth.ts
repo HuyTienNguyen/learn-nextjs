@@ -13,8 +13,6 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     ...options,
   });
 
-  console.log({ profile, error });
-
   const firstLoading = profile === undefined && error === undefined;
 
   async function login() {
@@ -27,7 +25,7 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
   }
   async function logout() {
     await authApi.logout();
-    mutate(null, false);
+    mutate({}, false);
   }
 
   return {

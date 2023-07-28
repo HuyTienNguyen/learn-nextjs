@@ -2,6 +2,7 @@ import { AdminLayout, MainLayout } from '@/components/layout';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { Box, Typography, Button } from '@mui/material';
 
 const Header = dynamic(() => import('@/components/common/header'), { ssr: false });
 
@@ -37,8 +38,11 @@ export default function AboutPage(props: AboutPageProps) {
   }
 
   return (
-    <div>
-      <h1>About page</h1>
+    <Box >
+      <Typography component="h1" variant="h3" color="primary.main">
+        About page
+      </Typography>
+      
       <Header />
 
       <ul className="post-list">
@@ -48,11 +52,11 @@ export default function AboutPage(props: AboutPageProps) {
       </ul>
 
       <button onClick={handleNextClick}>Next page</button>
-    </div>
+    </Box>
   );
 }
 
-AboutPage.Layout = AdminLayout
+AboutPage.Layout = AdminLayout;
 
 export async function getStaticProps() {
   console.log('get static props');
