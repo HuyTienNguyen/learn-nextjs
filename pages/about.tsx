@@ -1,4 +1,4 @@
-import { MainLayout } from '@/components/layout';
+import { AdminLayout, MainLayout } from '@/components/layout';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -52,7 +52,7 @@ export default function AboutPage(props: AboutPageProps) {
   );
 }
 
-AboutPage.Layout = MainLayout
+AboutPage.Layout = AdminLayout
 
 export async function getStaticProps() {
   console.log('get static props');

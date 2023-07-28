@@ -3,8 +3,6 @@ import { PublicConfiguration } from 'swr/_internal';
 import { authApi } from '../api-client';
 
 export function useAuth(options?: Partial<PublicConfiguration>) {
-  // profile
-    console.log('callapi')
   const {
     data: profile,
     error,
@@ -14,6 +12,10 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     revalidateOnFocus: false,
     ...options,
   });
+
+  console.log({ profile, error });
+
+  const firstLoading = profile === undefined && error === undefined;
 
   async function login() {
     await authApi.login({
@@ -25,7 +27,7 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
   }
   async function logout() {
     await authApi.logout();
-    mutate({}, false);
+    mutate(null, false);
   }
 
   return {
@@ -33,5 +35,6 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     error,
     login,
     logout,
+    firstLoading,
   };
 }
