@@ -19,6 +19,7 @@
       "@/styles/*": ["./styles/*"],
       "@/constants/*": ["./constants/*"],
       "@/models/*": ["./models/*"],
+      "@/hooks/*": ["./hooks/*"],
       "@/api/*": ["./api-client/*"]
     }
   },
