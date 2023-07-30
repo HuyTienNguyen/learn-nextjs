@@ -3,8 +3,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-
-const Header = dynamic(() => import('@/components/common/header'), { ssr: false });
+import { Header } from '@/components/common';
 
 export interface AboutPageProps {}
 
@@ -38,11 +37,11 @@ export default function AboutPage(props: AboutPageProps) {
   }
 
   return (
-    <Box >
+    <Box>
       <Typography component="h1" variant="h3" color="primary.main">
         About page
       </Typography>
-      
+
       <Header />
 
       <ul className="post-list">

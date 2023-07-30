@@ -14,8 +14,8 @@ const clientSideEmotionCache = createEmotionCache();
 function MyApp({
   Component,
   pageProps,
-  // emotionCache = clientSideEmotionCache,
-}: AppPropsWithLayout) {
+}: // emotionCache = clientSideEmotionCache,
+AppPropsWithLayout) {
   console.log('App re-render');
   const Layout = Component.Layout ?? EmptyLayout;
 
@@ -25,7 +25,7 @@ function MyApp({
         <CssBaseline />
         <SWRConfig value={{ fetcher: (url) => axiosClient.get(url), shouldRetryOnError: false }}>
           <Layout>
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
           </Layout>
         </SWRConfig>
       </ThemeProvider>
