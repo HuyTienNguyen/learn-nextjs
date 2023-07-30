@@ -12,7 +12,7 @@ export function HeaderDesktop(props: HeaderDesktopProps) {
         <Stack direction="row" justifyContent="flex-end">
           {ROUTE_LIST.map((route) => (
             <Link key={route.path} href={route.path} passHref>
-              {route.label}
+              <MuiLink>{route.label}</MuiLink>
             </Link>
           ))}
         </Stack>
