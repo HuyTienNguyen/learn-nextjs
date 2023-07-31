@@ -1,14 +1,17 @@
-import { Roboto } from 'next/font/google';
-import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
 
 // Create a theme instance.
 export const theme = createTheme({
+  typography: {
+    fontFamily: 'Heebo, sans-serif'
+  },
   palette: {
     primary: {
       main: '#FF6464',
     },
     secondary: {
+      light: '#EDF7FA',
       main: '#00A8CC',
     },
     error: {
@@ -25,5 +28,28 @@ export const theme = createTheme({
         maxWidthMd: { maxWidth: '860px', '@media (min-width: 900px)': { maxWidth: '860px' } },
       },
     },
+    MuiLink: {
+      defaultProps: {
+        underline: 'hover',
+      },
+      styleOverrides: {
+        root: {
+          color: 'black',
+          '&:hover, &.active': {
+            color: '#FF6464',
+          },
+        },
+      },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: {variant: 'contained', color: 'primary'},
+          style: {
+            color: 'white'
+          }
+        }
+      ]
+    }
   },
 });
