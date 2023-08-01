@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { authApi } from '@/api/index';
 import { useAuth } from '../hooks';
 import { useRouter } from 'next/router';
 
@@ -19,13 +18,7 @@ export default function LoginPage() {
       console.log('failed to login', error);
     }
   }
-  async function handleGetProfileClick() {
-    try {
-      await logout();
-    } catch (error) {
-      console.log('failed to get profile', error);
-    }
-  }
+  
   async function handleLogoutClick() {
     try {
       await logout();

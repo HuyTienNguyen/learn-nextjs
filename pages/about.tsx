@@ -1,5 +1,4 @@
 import { AdminLayout, MainLayout } from '@/components/layout';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
