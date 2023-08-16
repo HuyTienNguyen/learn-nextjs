@@ -1,6 +1,7 @@
 import { red } from '@mui/material/colors';
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 
+
 // Create a theme instance.
 export let theme = createTheme({
   typography: {
@@ -58,29 +59,21 @@ export let theme = createTheme({
       styleOverrides: {
         root: {
           paddingInline: 4,
-        }
+        },
       },
       variants: [
         {
-          props: {color: 'secondary'},
+          props: { color: 'secondary' },
           style: {
             color: 'white',
             fontWeight: 'bold',
             fontSize: '16px',
-            backgroundColor: '#142850'
-          }
-        }
-      ]
-    }
+            backgroundColor: '#142850',
+          },
+        },
+      ],
+    },
   },
 });
 
 theme = responsiveFontSizes(theme);
-
-// theme.typography.h3 = {
-//   fontSize: '2rem',
-
-//   [theme.breakpoints.up('md')]: {
-//     fontSize: '3rem',
-//   },
-// };
